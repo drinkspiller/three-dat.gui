@@ -32,3 +32,4 @@ package-lock.json
 # Build
 dist
 .python-version
+package-lock.json
