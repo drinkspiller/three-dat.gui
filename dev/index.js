@@ -1,8 +1,8 @@
 import * as THREE from 'three';
-import initThreeDatGui from '../dist'; // three-dat.gui
-import * as LilGui  from 'lil-gui';
+import init from '../dist'; // Import initialization method
+import * as LilGui from 'lil-gui';
 
-initThreeDatGui(LilGui);
+init(LilGui);
 
 class App {
   constructor() {

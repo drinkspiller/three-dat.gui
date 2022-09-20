@@ -1,6 +1,4 @@
-# three-dat.gui
-
-<a href="https://codeclimate.com/github/SolalDR/three-dat.gui/maintainability"><img src="https://api.codeclimate.com/v1/badges/db5b4da3972fef7fbad4/maintainability" /></a>
+# three-lil-gui
 
 A package which create THREE.js controls on lil-gui
 
@@ -10,13 +8,13 @@ A package which create THREE.js controls on lil-gui
 First install the npm package
 
 ```
-npm install github:drinkspiller/three-dat.gui
+npm install github:drinkspiller/three-lil-gui
 ```
 
 Or with yarn
 
 ```
-yarn add github:drinkspiller/three-dat.gui
+yarn add github:drinkspiller/three-lil-gui
 ```
 
 ## How to use
@@ -25,7 +23,7 @@ Let's create a simple THREE.js example which display a gui controller for our `T
 
 ```javascript
 import * as LilGui  from 'lil-gui';
-import init from 'three-dat.gui'; // Import initialization method
+import init from 'three-lil-gui'; // Import initialization method
 init(LilGui);
 
 /*
