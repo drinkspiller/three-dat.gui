@@ -1,18 +1,19 @@
 const types = ['Light', 'Mesh', 'Object3D'];
 
 export const manageColor = (object, folder, parameter, onChange) => {
-  const config = {};
 
+  const config = {};
   config[parameter[0]] = {
     r: object[parameter[0]].r,
     g: object[parameter[0]].g,
     b: object[parameter[0]].b,
   };
 
+
   folder.addColor(config, parameter[0]).onChange((e) => {
-    object[parameter[0]].r = e.r / 255;
-    object[parameter[0]].g = e.g / 255;
-    object[parameter[0]].b = e.b / 255;
+    object[parameter[0]].r = e.r;
+    object[parameter[0]].g = e.g;
+    object[parameter[0]].b = e.b;
 
     if (onChange) onChange(e);
   });

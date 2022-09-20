@@ -1,4 +1,4 @@
-import { manageColor } from '../helpers/manageDefines';
+import {manageColor} from '../helpers/manageDefines';
 
 const defines = [
   ['angle', 0, Math.PI / 2],
@@ -15,19 +15,26 @@ const defines = [
  * Add a gui controller to a light.
  * @param {string} name
  * @param {THREE.Light} light
+ * @param {object=} propertyMinMax
  * @todo castShadow, target
  * @returns {GUI} Returns the folder created for the light
  */
-export const addLight = function(name, light) {
+export const addLight = function(name, light, propertyMinMax = {}) {
   const folder = this.addFolder(name);
-  folder.addObject3D(null, light, { inner: true });
+  folder.addObject3D(null, light, {inner: true});
 
   defines.forEach(parameter => {
     if (!light.hasOwnProperty(parameter[0])) return;
     if (parameter[1] === 'color') {
       manageColor(light, folder, parameter);
     } else {
-      folder.add(light, parameter[0], parameter[1], parameter[2]);
+      const min = propertyMinMax.hasOwnProperty(parameter[0]) ?
+          propertyMinMax[parameter[0].min] :
+          parameter[1];
+      const max = propertyMinMax.hasOwnProperty(parameter[0]) ?
+          propertyMinMax[parameter[0].max] :
+          parameter[2];
+      folder.add(light, parameter[0], min, max);
     }
   });
 
