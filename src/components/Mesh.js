@@ -8,4 +8,6 @@ export const addMesh = function(name, mesh, { recursive = false } = {}) {
   const folder = this.addFolder(name);
   folder.addMaterial('material', mesh.material);
   folder.addObject3D('object', mesh, { inner: true, recursive });
+
+  return folder;
 };

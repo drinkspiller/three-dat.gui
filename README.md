@@ -2,22 +2,21 @@
 
 <a href="https://codeclimate.com/github/SolalDR/three-dat.gui/maintainability"><img src="https://api.codeclimate.com/v1/badges/db5b4da3972fef7fbad4/maintainability" /></a>
 
-A package which create THREE.js controls on Dat.GUI
+A package which create THREE.js controls on lil-gui
 
-[live example](https://solaldr.github.io/three-dat.gui/)
 
 ## Install
 
 First install the npm package
 
 ```
-npm install three-dat.gui
+npm install github:drinkspiller/three-dat.gui
 ```
 
 Or with yarn
 
 ```
-yarn add three-dat.gui
+yarn add github:drinkspiller/three-dat.gui
 ```
 
 ## How to use
@@ -25,15 +24,15 @@ yarn add three-dat.gui
 Let's create a simple THREE.js example which display a gui controller for our `THREE.MeshStandardMaterial`
 
 ```javascript
-import Dat from 'dat.gui';
+import * as LilGui  from 'lil-gui';
 import init from 'three-dat.gui'; // Import initialization method
-init(Dat); // Init three-dat.gui with Dat
+init(LilGui);
 
-/* 
+/*
 ... init scene, renderer & camera
 */
 
-var gui = new Dat.GUI();
+var gui = new LilGui.GUI();
 var geometry = new THREE.BoxGeometry(1, 1, 1);
 var material = new MeshStandardMaterial();
 var mesh = new THREE.Mesh(geometry, material);

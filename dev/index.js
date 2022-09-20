@@ -1,8 +1,8 @@
 import * as THREE from 'three';
-import Dat from 'dat.gui';
 import initThreeDatGui from '../dist'; // three-dat.gui
+import * as LilGui  from 'lil-gui';
 
-initThreeDatGui(Dat);
+initThreeDatGui(LilGui);
 
 class App {
   constructor() {
@@ -43,15 +43,13 @@ class App {
 
     this.gui.addScene('Scene', this.scene, {
       recursive: true
-    });
-    
+    }).close();
+
   }
 
   initGui() {
-    this.gui = new Dat.GUI();
-    
-
-    this.gui.addCamera('Camera', this.camera);
+    this.gui = new LilGui.GUI();
+    this.gui.addCamera('Camera', this.camera).close();
   }
 
   onWindowResize() {
@@ -61,7 +59,7 @@ class App {
   }
 
   render() {
-    this.cubeMesh.rotation.y += 0.01;
+    // this.cubeMesh.rotation.y += 0.01;
     this.renderer.render(this.scene, this.camera);
   }
 
@@ -70,12 +68,12 @@ class App {
     this.light.position.set(0, -2.5, 0);
 
     this.scene.add(this.light);
-    this.gui.addLight('PointLight', this.light);
+    this.gui.addLight('PointLight', this.light).close();
 
     this.ambient = new THREE.AmbientLight(0xFFFFFF, 0.3);
 
     this.scene.add(this.ambient);
-    this.gui.addLight('AmbientLight', this.ambient);
+    this.gui.addLight('AmbientLight', this.ambient).close();
   }
 
   initCube() {
@@ -90,7 +88,7 @@ class App {
     this.cubeMesh.rotation.z = 2;
 
     this.scene.add(this.cubeMesh);
-    this.gui.addMesh('Cube', this.cubeMesh);
+    this.gui.addMesh('Cube', this.cubeMesh).close();
   }
 
   initFloor() {
@@ -105,7 +103,7 @@ class App {
     floorMesh.name = "Name"
 
     this.scene.add(floorMesh);
-    this.gui.addMesh('Floor', floorMesh)
+    this.gui.addMesh('Floor', floorMesh).close();
   }
 }
 
