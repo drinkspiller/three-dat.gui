@@ -26,7 +26,7 @@ var manageColor = function manageColor(object, folder, parameter, onChange) {
     g: object[parameter[0]].g * 255,
     b: object[parameter[0]].b * 255
   };
-  folder.addColor(config, parameter[0], parameter[1]).onChange(function (e) {
+  folder.addColor(config, parameter[0]).onChange(function (e) {
     object[parameter[0]].r = e.r / 255;
     object[parameter[0]].g = e.g / 255;
     object[parameter[0]].b = e.b / 255;
