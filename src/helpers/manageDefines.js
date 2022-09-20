@@ -9,7 +9,7 @@ export const manageColor = (object, folder, parameter, onChange) => {
     b: object[parameter[0]].b * 255,
   };
 
-  folder.addColor(config, parameter[0], parameter[1]).onChange((e) => {
+  folder.addColor(config, parameter[0]).onChange((e) => {
     object[parameter[0]].r = e.r / 255;
     object[parameter[0]].g = e.g / 255;
     object[parameter[0]].b = e.b / 255;
