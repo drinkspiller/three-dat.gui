@@ -30,5 +30,5 @@ package-lock.json
 .parcel
 
 # Build
-dist
 .python-version
+docs
