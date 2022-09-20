@@ -19,7 +19,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/drinkspiller/three-lil-gui.git"https://github.com/{USER}/{REPO}/tarball/{BRANCH}
+    "url": "git+https://github.com/drinkspiller/three-lil-gui.git"
   },
   "keywords": [
     "three",
