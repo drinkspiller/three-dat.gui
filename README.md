@@ -8,13 +8,13 @@ A package which create THREE.js controls on lil-gui
 First install the npm package
 
 ```
-npm install github:drinkspiller/three-lil-gui
+npm install --save https://github.com/drinkspiller/three-lil-gui/tarball/master
 ```
 
 Or with yarn
 
 ```
-yarn add github:drinkspiller/three-lil-gui
+yarn add --save https://github.com/drinkspiller/three-lil-gui/tarball/master
 ```
 
 ## How to use
